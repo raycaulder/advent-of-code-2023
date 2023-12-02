@@ -18,7 +18,7 @@ async function part1() {
     let isPossible = true;
     handData.forEach((game) => {
       // Split the colors and iterate
-      handData.split(",").forEach((color) => {
+      game.split(",").forEach((color) => {
         const cubeKeyValue = color.trim().split(" ");
         // Grab possibility as long as game is still possible
         isPossible = isPossible
@@ -36,22 +36,15 @@ async function part1() {
 }
 
 async function part2() {
-  const constraints = {
-    red: 12,
-    green: 13,
-    blue: 14,
-  };
-
   let sum = 0;
   inputIterator((line) => {
-    const handData = line.split(":")[1].trim().split(";");
-
     const minimumCubes = {
       red: 0,
       green: 0,
       blue: 0,
     };
 
+    const handData = line.split(":")[1].trim().split(";");
     handData.forEach((hand) => {
       hand.split(",").forEach((color) => {
         const cubeKeyValue = color.trim().split(" ");
