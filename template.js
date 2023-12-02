@@ -1,17 +1,20 @@
-import { open } from "node:fs/promises";
+import { fileLoader } from "../helpers/index.js";
 
-async function main() {
-  const file = await open("input.txt");
-  for await (const line of file.readLines()) {
+async function part1() {
+  fileLoader((line) => {
     console.log(line);
-  }
+  }).then(() => {
+    // Post Processing
+  });
 }
 
-async function main2() {
-  for await (const line of file.readLines()) {
+async function part2() {
+  fileLoader((line) => {
     console.log(line);
-  }
+  }).then(() => {
+    // Post Processing
+  });
 }
 
-main();
-main2();
+part1();
+part2();
