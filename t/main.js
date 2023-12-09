@@ -8,4 +8,4 @@ function part2() {
 }
 
 part1();
-part2();
+// part2();
