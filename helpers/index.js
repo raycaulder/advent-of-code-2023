@@ -12,10 +12,35 @@ export function splitInputByLine() {
   return readFileSync("./input.txt", "utf-8").split("\n");
 }
 
+export function splitNamedInputByLine(filename) {
+  return readFileSync(filename, "utf-8").split("\n");
+}
+
 export function splitInputByLineWithGrid() {
   return readFileSync("./input.txt", "utf-8")
     .split("\n")
     .map((line) => [...line]);
+}
+
+export function splitLineBySpace(line) {
+  return line.split(" ").filter((item) => item !== "");
+}
+
+export function splitLineBySpaceAsNum(line) {
+  return line
+    .split(" ")
+    .filter((item) => item !== "")
+    .map((item) => parseInt(item));
+}
+
+export function removeSpaces(line) {
+  return line.replace(/\s/g, "");
+}
+
+//REDUCERS
+
+export function reduceProduct(arr) {
+  return arr.reduce((acc, curr) => acc * curr, 1);
 }
 
 // GRID STUFF; move to separate file
